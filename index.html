@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Math Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+      background: #f4f4f4;
+    }
+    #game {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+      display: inline-block;
+    }
+    input {
+      padding: 5px;
+      font-size: 18px;
+    }
+    button {
+      padding: 5px 15px;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    #score {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧮 Math Game</h1>
+  <div id="game">
+    <p id="question">Loading...</p>
+    <input type="number" id="answer" placeholder="Your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="feedback"></p>
+    <p>Score: <span id="score">0</span></p>
+  </div>
+
+  <script>
+    let num1, num2, correctAnswer;
+    let score = 0;
+
+    function newQuestion() {
+      num1 = Math.floor(Math.random() * 10) + 1;
+      num2 = Math.floor(Math.random() * 10) + 1;
+      correctAnswer = num1 + num2;
+      document.getElementById("question").innerText = `${num1} + ${num2} = ?`;
+      document.getElementById("answer").value = "";
+    }
+
+    function checkAnswer() {
+      let userAnswer = parseInt(document.getElementById("answer").value);
+      if (userAnswer === correctAnswer) {
+        score++;
+        document.getElementById("feedback").innerText = "✅ Correct!";
+      } else {
+        score = 0; // reset score
+        document.getElementById("feedback").innerText = "❌ Wrong!
