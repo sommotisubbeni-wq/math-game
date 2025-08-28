@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+}
+.container {
+  display: inline-block;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+#problem {
+  font-size: 24px;
+  margin: 20px 0;
+}
+#feedback {
+  margin: 10px 0;
+  font-weight: bold;
+}
+#score {
+  margin-top: 20px;
+  font-size: 18px;
+}
